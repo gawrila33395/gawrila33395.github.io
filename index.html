@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Evgenii G. | Creative Space</title>
+  <title>Evgenii G. | Software Engineer & Creator</title>
   <style>
     * {
       margin: 0;
@@ -15,16 +15,15 @@
       background: linear-gradient(145deg, #f9f7f3 0%, #ece6e0 100%);
       font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Poppins', 'Roboto', sans-serif;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 2rem;
+      position: relative;
     }
 
     /* modern card container */
     .card {
-      max-width: 780px;
+      max-width: 950px;
       width: 100%;
+      margin: 0 auto;
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(0px);
       border-radius: 3rem;
@@ -46,6 +45,8 @@
       padding: 2rem 2rem 1.5rem 2rem;
       text-align: center;
       border-bottom: 4px solid #ffb347;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero h1 {
@@ -58,6 +59,12 @@
       color: transparent;
       text-shadow: 0 2px 5px rgba(0,0,0,0.1);
       margin-bottom: 0.5rem;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 5px rgba(255,180,71,0.3); }
+      50% { text-shadow: 0 0 20px rgba(255,180,71,0.6); }
     }
 
     .hero-tagline {
@@ -86,87 +93,184 @@
       font-weight: 500;
       border: 1px solid #ffdfb8;
       box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: transform 0.2s;
     }
 
-    .intro-text p {
-      margin: 0;
+    .intro-text:hover {
+      transform: scale(1.01);
     }
 
-    /* featured link section — clean & modern */
-    .featured-link {
-      background: #ffffffea;
+    /* Experience section — PSJ Sovcombank */
+    .experience-section {
+      margin: 2rem 0 2rem;
+      background: #fefaf5;
       border-radius: 2rem;
       padding: 1.2rem 1.6rem;
-      margin: 1.8rem 0 2rem 0;
-      border-left: 8px solid #ffb347;
-      transition: all 0.2s;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+      border-left: 8px solid #2c7da0;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
-    .featured-link h3 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #ff8c42;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
+    .experience-section:hover {
+      transform: translateX(8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      background: #fffdf9;
+    }
+
+    .exp-header {
       display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .featured-link h3::before {
-      content: "✨";
-      font-size: 1.2rem;
-    }
-
-    .link-wrapper {
-      display: flex;
-      align-items: center;
       flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 0.5rem;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+      gap: 0.5rem;
     }
 
-    .site-link {
-      font-size: 1.3rem;
+    .exp-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1f5068;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .exp-title span:first-child {
+      background: #2c7da0;
+      color: white;
+      font-size: 0.9rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+
+    .company-badge {
+      font-size: 1rem;
       font-weight: 600;
-      background: #f5f0eb;
-      padding: 0.5rem 1.2rem;
+      color: #2c7da0;
+      background: #e2f0f5;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+    }
+
+    .exp-date {
+      font-family: monospace;
+      background: #e9e3db;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #4a5b66;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 1rem;
+    }
+
+    .tech-tag {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 0.25rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e4a6b;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      transition: all 0.2s;
+    }
+
+    .tech-tag:hover {
+      background: #ffb34720;
+      transform: scale(1.05);
+      border-color: #ffb347;
+    }
+
+    .achievement-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .achievement-list li {
+      margin-bottom: 0.7rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: #2c3e44;
+      line-height: 1.4;
+      transition: transform 0.1s;
+    }
+
+    .achievement-list li:hover {
+      transform: translateX(5px);
+    }
+
+    .achievement-list li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #ff8c42;
+      font-weight: bold;
+    }
+
+    /* contact section */
+    .contact-section {
+      background: linear-gradient(135deg, #fff5eb, #ffffff);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      margin: 2rem 0 1.5rem;
+      text-align: center;
+      border: 1px solid #ffdec2;
+    }
+
+    .contact-section h3 {
+      color: #ff8c42;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 0.8rem 1.6rem;
       border-radius: 60px;
       text-decoration: none;
-      color: #1e2a3e;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: 1px solid #ffcd94;
+      color: #2c2e3a;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #ffe0c0;
     }
 
-    .site-link:hover {
-      background: #ffb347;
-      color: white;
-      border-color: #ffa01e;
-      transform: scale(1.02);
-      box-shadow: 0 8px 16px rgba(255, 180, 70, 0.25);
+    .contact-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 24px rgba(255, 140, 66, 0.2);
+      border-color: #ffb347;
+      background: #fffaf2;
     }
 
-    .link-badge {
-      font-size: 0.75rem;
-      background: #e9e3db;
-      padding: 0.2rem 0.8rem;
-      border-radius: 30px;
-      color: #7a6a58;
-      font-weight: normal;
-    }
-
-    /* gif section — joyful ice-cream moment */
+    /* gif section */
     .gif-section {
       text-align: center;
-      margin: 2rem 0 1.5rem;
+      margin: 1.5rem 0;
       background: #fffaf2;
       border-radius: 2rem;
       padding: 1.2rem;
+      transition: all 0.3s;
     }
 
     .gif-section img {
@@ -174,11 +278,11 @@
       height: auto;
       border-radius: 28px;
       box-shadow: 0 12px 22px -12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s;
+      transition: transform 0.3s ease;
     }
 
     .gif-section img:hover {
-      transform: scale(1.01);
+      transform: scale(1.02) rotate(1deg);
     }
 
     .caption {
@@ -189,9 +293,42 @@
       letter-spacing: 0.3px;
     }
 
-    /* footer / contact zone */
+    /* interactive counter */
+    .fun-stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      padding: 1rem;
+      border-radius: 2rem;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid #ffe0b5;
+    }
+
+    .stat-card:hover {
+      background: #ffb34720;
+      transform: scale(1.02);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ff8c42;
+    }
+
+    /* footer */
     .footer-note {
-      margin-top: 2.2rem;
+      margin-top: 2rem;
       padding-top: 1.2rem;
       border-top: 2px dotted #eedbc8;
       display: flex;
@@ -203,63 +340,29 @@
       color: #6b5a48;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-icons a {
-      color: #a07e58;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-      background: #f4ede5;
-      padding: 0.3rem 0.9rem;
-      border-radius: 40px;
-    }
-
-    .social-icons a:hover {
-      color: #ff9142;
-      background: #fff0e0;
-    }
-
-    /* subtle animation for entrance */
+    /* animations */
     @keyframes fadeSlide {
-      0% {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .card, .hero, .content {
       animation: fadeSlide 0.5s ease-out forwards;
     }
 
-    /* responsive touches */
-    @media (max-width: 580px) {
-      body {
-        padding: 1rem;
-      }
-      .hero h1 {
-        font-size: 2.3rem;
-      }
-      .content {
-        padding: 1.5rem;
-      }
-      .intro-text {
-        font-size: 1rem;
-      }
-      .site-link {
-        font-size: 1rem;
-      }
-      .footer-note {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .chat-widget-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+    }
+
+    @media (max-width: 650px) {
+      body { padding: 1rem; }
+      .hero h1 { font-size: 2.3rem; }
+      .content { padding: 1.5rem; }
+      .contact-links { gap: 1rem; }
+      .contact-card { padding: 0.5rem 1rem; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -267,46 +370,336 @@
   <div class="card">
     <div class="hero">
       <h1>Evgenii G.</h1>
-      <div class="hero-tagline">✦ digital explorer & creator ✦</div>
+      <div class="hero-tagline">✦ software engineer & creator ✦</div>
     </div>
     <div class="content">
-      <div class="intro-text">
-        <p>👋 Hey there! Welcome to my corner of the web. I'm passionate about building clean interfaces, 
-        exploring new technologies, and sharing good vibes. Stay curious — and enjoy the ice cream! 🍦</p>
+      <div class="intro-text" id="introText">
+        <p>👋 Hey there! Welcome to my interactive portfolio. I'm passionate about building robust backend systems, clean interfaces, and exploring new technologies. Click around — there's magic in every corner! 🍦</p>
       </div>
 
-      <!-- featured link section with the provided santifer.io link -->
-      <div class="featured-link">
-        <h3>featured inspiration</h3>
-        <div class="link-wrapper">
-          <a href="https://santifer.io" class="site-link" target="_blank" rel="noopener noreferrer">
-            🌐 santifer.io
-            <span class="link-badge">portfolio & ideas</span>
-          </a>
-          <span style="font-size: 0.85rem; color: #8f7a64;">↗ explore creative work</span>
+      <!-- Experience: PSJ Sovcombank - Software Engineer C# -->
+      <div class="experience-section" id="expSection">
+        <div class="exp-header">
+          <div class="exp-title">
+            <span>Software Engineer</span>
+            <span class="company-badge">PSJ Sovcombank</span>
+          </div>
+          <div class="exp-date">📅 July 2019 – March 2023</div>
         </div>
-        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9b8a74;">
-          One of the most inspiring spaces — design meets purpose.
-        </p>
+        <div class="tech-stack">
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">.NET Core</span>
+          <span class="tech-tag">ASP.NET</span>
+          <span class="tech-tag">Entity Framework</span>
+          <span class="tech-tag">MS SQL</span>
+          <span class="tech-tag">RabbitMQ</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">REST APIs</span>
+        </div>
+        <ul class="achievement-list">
+          <li>Designed and maintained microservices for core banking systems serving 1M+ users, using C# and .NET Core, improving transaction processing by 30%.</li>
+          <li>Implemented event-driven architecture with RabbitMQ, reducing coupling between internal financial modules and increasing reliability.</li>
+          <li>Refactored legacy monolith into scalable, testable components, cutting down deployment time by 40% and increasing code coverage to 85%.</li>
+          <li>Collaborated with cross-functional teams to deliver secure API gateways and real-time reporting dashboards for risk assessment.</li>
+          <li>Mentored junior developers, conducted code reviews, and introduced CI/CD pipelines using GitLab + Docker, accelerating release cycles.</li>
+        </ul>
+        <div style="margin-top: 12px; font-size: 0.8rem; color: #2c7da0; background: #eef4f7; display: inline-block; padding: 0.2rem 1rem; border-radius: 60px;">
+          🏆 Key achievement: Led migration of payment gateway to .NET 6, handling 5k+ requests/sec with 99.99% uptime
+        </div>
       </div>
 
-      <!-- happy ice-cream gif from original request, but with better presentation -->
+      <!-- interactive fun stats -->
+      <div class="fun-stats">
+        <div class="stat-card" id="coffeeStat">
+          <div class="stat-number" id="coffeeCount">0</div>
+          <div>☕ Coffees (click me)</div>
+        </div>
+        <div class="stat-card" id="codeStat">
+          <div class="stat-number" id="codeCommits">1.2k</div>
+          <div>💻 commits impressed</div>
+        </div>
+      </div>
+
+      <!-- Contact Section with LinkedIn and Email -->
+      <div class="contact-section">
+        <h3>📫 Let's connect</h3>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/evgeniig" class="contact-card" target="_blank" rel="noopener noreferrer">
+            🔗 LinkedIn Profile
+          </a>
+          <a href="mailto:gawrila33395@gmail.com" class="contact-card">
+            📧 gawrila33395@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <!-- happy ice-cream gif -->
       <div class="gif-section">
         <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" 
              alt="happy dancing ice cream gif"
-             loading="lazy">
-        <div class="caption">🍧 happiness served daily — code with joy 🍧</div>
+             loading="lazy"
+             id="iceCreamGif">
+        <div class="caption">🍧 happiness served daily — click the ice cream for a surprise! 🍧</div>
       </div>
 
       <div class="footer-note">
-        <span>© 2026 Evgenii G. — built with 🧡</span>
-        <div class="social-icons">
-          <a href="#" aria-label="github">GitHub</a>
-          <a href="#" aria-label="linkedin">LinkedIn</a>
-          <a href="#" aria-label="contact">Contact</a>
-        </div>
+        <span>© 2026 Evgenii G. — built with 🧡 | C# • .NET • cloud native</span>
       </div>
     </div>
   </div>
+
+  <div id="chatbot-root" class="chat-widget-container"></div>
+
+  <script>
+    // Interactive features: coffee counter, commit animation, ice cream surprise, exp click alert
+    let coffeeClicks = 0;
+    const coffeeSpan = document.getElementById('coffeeCount');
+    const coffeeCard = document.getElementById('coffeeStat');
+    const codeStatDiv = document.getElementById('codeStat');
+    const iceCreamImg = document.getElementById('iceCreamGif');
+    const expSection = document.getElementById('expSection');
+
+    if (coffeeCard) {
+      coffeeCard.addEventListener('click', () => {
+        coffeeClicks++;
+        coffeeSpan.innerText = coffeeClicks;
+        if (coffeeClicks === 5) {
+          alert("☕ That's 5 coffees! You're ready to code all night!");
+        } else if (coffeeClicks === 10) {
+          alert("🚀 10 coffees! You're officially a backend hero!");
+        }
+      });
+    }
+
+    if (codeStatDiv) {
+      codeStatDiv.addEventListener('click', () => {
+        const commitElem = document.getElementById('codeCommits');
+        let current = parseInt(commitElem.innerText);
+        let newVal = current + 50;
+        commitElem.innerText = newVal + '+';
+        alert(`✨ Impressive! +50 commits inspired. Total influence: ${newVal}+ commits ✨`);
+      });
+    }
+
+    if (iceCreamImg) {
+      iceCreamImg.addEventListener('click', () => {
+        iceCreamImg.style.transform = 'scale(1.1) rotate(3deg)';
+        setTimeout(() => { iceCreamImg.style.transform = ''; }, 300);
+        alert('🍦 Happiness delivered! Coding is fun, just like this ice cream!');
+      });
+    }
+
+    if (expSection) {
+      expSection.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'LI' && e.target.tagName !== 'SPAN') {
+          alert('💼 Evgenii worked at PSJ Sovcombank as a C# Software Engineer from July 2019 to March 2023. Ask the chatbot for more details!');
+        }
+      });
+    }
+
+    // initial coffee count
+    coffeeSpan.innerText = '0';
+  </script>
+
+  <!-- Advanced Chatbot Script (complex: state machine, context memory, and rich Q&A) -->
+  <script>
+    (function() {
+      // ---------- ADVANCED CHATBOT with memory and context ----------
+      const chatStyles = document.createElement('style');
+      chatStyles.textContent = `
+        .chat-toggle-btn {
+          width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(145deg, #ff8c42, #ffb347);
+          border: none; box-shadow: 0 8px 20px rgba(0,0,0,0.2); cursor: pointer; display: flex; align-items: center;
+          justify-content: center; transition: all 0.2s; color: white; font-size: 30px; font-weight: bold;
+        }
+        .chat-toggle-btn:hover { transform: scale(1.08); background: linear-gradient(145deg, #ff7a2a, #ffa035); }
+        .chat-window { position: fixed; bottom: 90px; right: 24px; width: 380px; max-width: calc(100vw - 40px);
+          background: #ffffff; border-radius: 32px; box-shadow: 0 25px 40px -12px rgba(0,0,0,0.4); display: flex;
+          flex-direction: column; overflow: hidden; font-family: 'Segoe UI', system-ui; z-index: 1001; border: 1px solid #ffcd94; }
+        .chat-header { background: #2c2e3a; color: white; padding: 1rem; display: flex; justify-content: space-between; font-weight: 600; border-bottom: 2px solid #ffb347; }
+        .close-chat { background: none; border: none; color: #ffcd94; font-size: 1.3rem; cursor: pointer; }
+        .close-chat:hover { color: white; }
+        .chat-messages { height: 340px; overflow-y: auto; padding: 1rem; background: #fefcf8; display: flex; flex-direction: column; gap: 10px; }
+        .message { max-width: 85%; padding: 8px 14px; border-radius: 24px; font-size: 0.85rem; line-height: 1.4; word-break: break-word; animation: fadeMsg 0.2s ease; }
+        .bot-msg { background: #e9eef3; color: #1f2a3a; align-self: flex-start; border-bottom-left-radius: 6px; }
+        .user-msg { background: #ffb347; color: white; align-self: flex-end; border-bottom-right-radius: 6px; }
+        .chat-input-area { display: flex; border-top: 1px solid #f0e2d0; background: white; padding: 10px 12px; gap: 10px; align-items: center; }
+        .chat-input { flex: 1; border: 1px solid #ffdfb8; border-radius: 60px; padding: 8px 14px; font-size: 0.8rem; outline: none; }
+        .send-btn { background: #ffb347; border: none; border-radius: 30px; padding: 6px 14px; color: white; font-weight: bold; cursor: pointer; }
+        .typing { font-size: 0.75rem; color: #aa8e6c; padding: 4px 12px; font-style: italic; }
+        .hidden-window { display: none; }
+        .chat-suggestions { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px; background: #fffbf5; border-top: 1px solid #ffe3c2; }
+        .suggestion-chip { background: #f0e7de; border-radius: 50px; padding: 4px 12px; font-size: 0.7rem; cursor: pointer; transition: 0.1s; }
+        .suggestion-chip:hover { background: #ffb347; color: white; }
+        @keyframes fadeMsg { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+      `;
+      document.head.appendChild(chatStyles);
+
+      const container = document.getElementById('chatbot-root');
+      if (!container) return;
+
+      let chatWindow = null;
+      let messagesContainer = null;
+      let inputField = null;
+      let isOpen = false;
+
+      // context memory (stores last topic)
+      let lastTopic = null;
+
+      // Advanced response engine
+      function getComplexReply(userMsg, historyContext = []) {
+        const msg = userMsg.toLowerCase().trim();
+        
+        // greetings with name
+        if (msg.match(/^(hi|hello|hey|greetings|sup|yo)/)) {
+          lastTopic = 'greeting';
+          return "👋 Hello! I'm Evgenii's advanced AI assistant. I know everything about his C# experience at PSJ Sovcombank, his LinkedIn, email, and tech philosophy. Ask me about his role, microservices, or contact details!";
+        }
+        
+        // PSJ Sovcombank / experience details
+        if (msg.match(/sovcombank|psj|experience|role|job|worked|software engineer|banking/)) {
+          lastTopic = 'experience';
+          return "Evgenii G. was a Software Engineer (C#) at PSJ Sovcombank from July 2019 to March 2023. He built microservices handling 1M+ users, improved transaction performance by 30%, used .NET Core, RabbitMQ, Docker, and led migration to .NET 6 (5k req/sec, 99.99% uptime). Want specific achievements or tech stack details?";
+        }
+        
+        // tech stack
+        if (msg.match(/tech stack|technologies|c#|\.net|entity framework|rabbitmq|docker|ms sql/)) {
+          lastTopic = 'tech';
+          return "⚙️ His core stack: C#, .NET Core, ASP.NET, Entity Framework, MS SQL, RabbitMQ, Docker, GitLab CI/CD. He's also experienced with REST APIs, event-driven architecture, and high-load systems. Ask me about his microservices design!";
+        }
+        
+        // achievements / proud
+        if (msg.match(/achievement|accomplishment|proud|key result|migration|payment gateway/)) {
+          lastTopic = 'achievement';
+          return "🏆 Top achievement: Leading the payment gateway migration to .NET 6, achieving 5k+ requests/sec with 99.99% uptime. Also reduced deployment time by 40% with CI/CD pipelines and mentored 3 junior devs!";
+        }
+        
+        // linkedin, email, contact
+        if (msg.match(/linkedin|email|contact|reach out|gawrila|gmail/)) {
+          lastTopic = 'contact';
+          return "📬 You can connect with Evgenii on LinkedIn (https://www.linkedin.com/in/evgeniig) or send an email directly to: gawrila33395@gmail.com. He's open to collaborations and opportunities!";
+        }
+        
+        // interactive elements or fun
+        if (msg.match(/coffee|click|ice cream|gif|stat/)) {
+          lastTopic = 'fun';
+          return "🍦 On this page, you can click the coffee counter to track your coding fuel! Also, click the ice-cream GIF for a happy surprise. Try it! And the commit counter can be boosted. Want to know more?";
+        }
+        
+        // default / fallback using context memory
+        if (lastTopic === 'experience') {
+          return "Regarding his experience at PSJ Sovcombank: He also refactored legacy monoliths, introduced code coverage to 85%, and created real-time risk dashboards. Anything else you'd like to know about his C# work?";
+        } else if (lastTopic === 'tech') {
+          return "His tech philosophy focuses on clean architecture and maintainable microservices. He also has experience with async patterns and message brokers. Want more insights?";
+        } else if (lastTopic === 'contact') {
+          return "LinkedIn: https://www.linkedin.com/in/evgeniig | Email: gawrila33395@gmail.com. Don't hesitate to reach out!";
+        }
+        
+        return "🤖 I can tell you about Evgenii's C# role at PSJ Sovcombank (2019-2023), his LinkedIn, email, or interactive features. Try: 'Tell me about PSJ Sovcombank', 'tech stack', 'contact info', or 'achievements'.";
+      }
+
+      function addMessage(text, isUser) {
+        if (!messagesContainer) return;
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${isUser ? 'user-msg' : 'bot-msg'}`;
+        msgDiv.textContent = text;
+        messagesContainer.appendChild(msgDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      function showTypingAndReply(userText) {
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'typing';
+        typingDiv.textContent = '✍️ Evgenii bot is analyzing...';
+        typingDiv.id = 'tempTyping';
+        messagesContainer.appendChild(typingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        setTimeout(() => {
+          const temp = document.getElementById('tempTyping');
+          if (temp) temp.remove();
+          const reply = getComplexReply(userText);
+          addMessage(reply, false);
+        }, 500);
+      }
+
+      function sendMessage() {
+        if (!inputField) return;
+        const text = inputField.value.trim();
+        if (text === "") return;
+        addMessage(text, true);
+        inputField.value = "";
+        showTypingAndReply(text);
+      }
+
+      function handleSuggestion(suggestion) {
+        addMessage(suggestion, true);
+        showTypingAndReply(suggestion);
+      }
+
+      function buildChatWindow() {
+        const win = document.createElement('div');
+        win.className = 'chat-window hidden-window';
+        win.innerHTML = `
+          <div class="chat-header">
+            <h4>🧠 Evgenii AI Assistant</h4>
+            <button class="close-chat" id="closeChatBtn">✕</button>
+          </div>
+          <div class="chat-messages" id="chatMessages"></div>
+          <div class="chat-suggestions">
+            <span class="suggestion-chip" data-suggest="Tell me about PSJ Sovcombank experience">💼 PSJ Sovcombank</span>
+            <span class="suggestion-chip" data-suggest="C# tech stack at PSJ">⚙️ Tech stack (C#/.NET)</span>
+            <span class="suggestion-chip" data-suggest="LinkedIn and email">📧 Contact & LinkedIn</span>
+            <span class="suggestion-chip" data-suggest="key achievements at bank">🏆 Achievements</span>
+            <span class="suggestion-chip" data-suggest="interactive features on page">🎮 Page interactions</span>
+          </div>
+          <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask anything...">
+            <button class="send-btn" id="sendMsgBtn">Send</button>
+          </div>
+        `;
+        return win;
+      }
+
+      function toggleChat() {
+        if (!chatWindow) {
+          chatWindow = buildChatWindow();
+          container.appendChild(chatWindow);
+          messagesContainer = chatWindow.querySelector('#chatMessages');
+          inputField = chatWindow.querySelector('#chatInput');
+          const closeBtn = chatWindow.querySelector('#closeChatBtn');
+          const sendBtn = chatWindow.querySelector('#sendMsgBtn');
+          const chips = chatWindow.querySelectorAll('.suggestion-chip');
+
+          closeBtn.addEventListener('click', () => {
+            chatWindow.classList.add('hidden-window');
+            isOpen = false;
+          });
+          sendBtn.addEventListener('click', sendMessage);
+          inputField.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+          chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+              const suggest = chip.getAttribute('data-suggest');
+              if (suggest) handleSuggestion(suggest);
+            });
+          });
+          addMessage("✨ Hi! I'm the upgraded assistant. I can answer anything about Evgenii's C# journey at PSJ Sovcombank, his LinkedIn, email, and even page features. What would you like to explore?", false);
+        }
+        if (chatWindow.classList.contains('hidden-window')) {
+          chatWindow.classList.remove('hidden-window');
+          isOpen = true;
+        } else {
+          chatWindow.classList.add('hidden-window');
+          isOpen = false;
+        }
+      }
+
+      const floatingBtn = document.createElement('button');
+      floatingBtn.className = 'chat-toggle-btn';
+      floatingBtn.innerHTML = '💬';
+      floatingBtn.addEventListener('click', toggleChat);
+      container.appendChild(floatingBtn);
+    })();
+  </script>
 </body>
 </html>
