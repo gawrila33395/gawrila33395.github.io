@@ -1,10 +1,312 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Evgenii G. | Creative Space</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      background: linear-gradient(145deg, #f9f7f3 0%, #ece6e0 100%);
+      font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, 'Poppins', 'Roboto', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    /* modern card container */
+    .card {
+      max-width: 780px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(0px);
+      border-radius: 3rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 8px 18px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 32px 55px -14px rgba(0, 0, 0, 0.3);
+    }
+
+    /* hero / header area */
+    .hero {
+      background: #2c2e3a;
+      background-image: radial-gradient(circle at 10% 20%, rgba(255, 215, 150, 0.15) 0%, rgba(50, 50, 70, 0.1) 90%);
+      padding: 2rem 2rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 4px solid #ffb347;
+    }
+
+    .hero h1 {
+      font-size: 3.3rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      background: linear-gradient(135deg, #FFFFFF, #FFE0B5);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      color: #f0e2c5;
+      font-weight: 400;
+      border-top: 1px dashed rgba(255,200,120,0.6);
+      display: inline-block;
+      padding-top: 0.6rem;
+      margin-top: 0.25rem;
+    }
+
+    /* main content area */
+    .content {
+      padding: 2rem 2.2rem 2.2rem 2.2rem;
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #2d2f36;
+      background: #fefaf5;
+      padding: 1rem 1.5rem;
+      border-radius: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      border: 1px solid #ffdfb8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .intro-text p {
+      margin: 0;
+    }
+
+    /* featured link section — clean & modern */
+    .featured-link {
+      background: #ffffffea;
+      border-radius: 2rem;
+      padding: 1.2rem 1.6rem;
+      margin: 1.8rem 0 2rem 0;
+      border-left: 8px solid #ffb347;
+      transition: all 0.2s;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    .featured-link h3 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ff8c42;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .featured-link h3::before {
+      content: "✨";
+      font-size: 1.2rem;
+    }
+
+    .link-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .site-link {
+      font-size: 1.3rem;
+      font-weight: 600;
+      background: #f5f0eb;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      color: #1e2a3e;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #ffcd94;
+    }
+
+    .site-link:hover {
+      background: #ffb347;
+      color: white;
+      border-color: #ffa01e;
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(255, 180, 70, 0.25);
+    }
+
+    .link-badge {
+      font-size: 0.75rem;
+      background: #e9e3db;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #7a6a58;
+      font-weight: normal;
+    }
+
+    /* gif section — joyful ice-cream moment */
+    .gif-section {
+      text-align: center;
+      margin: 2rem 0 1.5rem;
+      background: #fffaf2;
+      border-radius: 2rem;
+      padding: 1.2rem;
+    }
+
+    .gif-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: 0 12px 22px -12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .gif-section img:hover {
+      transform: scale(1.01);
+    }
+
+    .caption {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #b78c54;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* footer / contact zone */
+    .footer-note {
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 2px dotted #eedbc8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #6b5a48;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-icons a {
+      color: #a07e58;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      background: #f4ede5;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+    }
+
+    .social-icons a:hover {
+      color: #ff9142;
+      background: #fff0e0;
+    }
+
+    /* subtle animation for entrance */
+    @keyframes fadeSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card, .hero, .content {
+      animation: fadeSlide 0.5s ease-out forwards;
+    }
+
+    /* responsive touches */
+    @media (max-width: 580px) {
+      body {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .content {
+        padding: 1.5rem;
+      }
+      .intro-text {
+        font-size: 1rem;
+      }
+      .site-link {
+        font-size: 1rem;
+      }
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
 <body>
-  <h1>Evgenii G.</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+  <div class="card">
+    <div class="hero">
+      <h1>Evgenii G.</h1>
+      <div class="hero-tagline">✦ digital explorer & creator ✦</div>
+    </div>
+    <div class="content">
+      <div class="intro-text">
+        <p>👋 Hey there! Welcome to my corner of the web. I'm passionate about building clean interfaces, 
+        exploring new technologies, and sharing good vibes. Stay curious — and enjoy the ice cream! 🍦</p>
+      </div>
+
+      <!-- featured link section with the provided santifer.io link -->
+      <div class="featured-link">
+        <h3>featured inspiration</h3>
+        <div class="link-wrapper">
+          <a href="https://santifer.io" class="site-link" target="_blank" rel="noopener noreferrer">
+            🌐 santifer.io
+            <span class="link-badge">portfolio & ideas</span>
+          </a>
+          <span style="font-size: 0.85rem; color: #8f7a64;">↗ explore creative work</span>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #9b8a74;">
+          One of the most inspiring spaces — design meets purpose.
+        </p>
+      </div>
+
+      <!-- happy ice-cream gif from original request, but with better presentation -->
+      <div class="gif-section">
+        <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" 
+             alt="happy dancing ice cream gif"
+             loading="lazy">
+        <div class="caption">🍧 happiness served daily — code with joy 🍧</div>
+      </div>
+
+      <div class="footer-note">
+        <span>© 2026 Evgenii G. — built with 🧡</span>
+        <div class="social-icons">
+          <a href="#" aria-label="github">GitHub</a>
+          <a href="#" aria-label="linkedin">LinkedIn</a>
+          <a href="#" aria-label="contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
-
