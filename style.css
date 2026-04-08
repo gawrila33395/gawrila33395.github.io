@@ -1,150 +1,379 @@
-/* ========== 3D ROTATING IMAGE/CUBE ========== */
-.image-3d-container {
+/* ========== C# TODO LIST STYLES ========== */
+.todo-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.todo-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
-  perspective: 1000px;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.cube-3d {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  transform-style: preserve-3d;
+.todo-header h2 {
+  color: #2c2e3a;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.todo-badge {
+  background: #512bd4;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 60px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* Login Form */
+.todo-login {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.todo-login h3 {
+  color: #512bd4;
+  margin-bottom: 0.5rem;
+}
+
+.login-hint {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #ffb347;
+  box-shadow: 0 0 0 3px rgba(255, 180, 71, 0.1);
+}
+
+.todo-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  background: white;
   cursor: pointer;
+  font-family: inherit;
 }
 
-/* Rotation animation */
-@keyframes rotate3d {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+.todo-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.login-btn {
+  background: #512bd4;
+  color: white;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background: #3a1a9e;
+  transform: translateY(-2px);
+}
+
+.login-error {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #f8d7da;
+  color: #721c24;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+}
+
+/* Todo App */
+.todo-app {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@keyframes rotate3d-slow {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
+.todo-user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #e9ecef;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes rotate3d-smooth {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  100% {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
 }
 
-/* Continuous rotation */
-.cube-3d {
-  animation: rotate3d-smooth 8s infinite linear;
+.logout-btn:hover {
+  background: #c82333;
+  transform: scale(1.05);
 }
 
-/* Pause on hover */
-.cube-3d:hover {
-  animation-play-state: paused;
+/* Todo Stats */
+.todo-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
 }
 
-/* Each face of the cube */
-.cube-face {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, #ffb347, #ff8c42);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 140, 66, 0.3);
+.stat-item {
+  flex: 1;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #512bd4;
+}
+
+/* Todo Add */
+.todo-add {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.todo-add .todo-input {
+  flex: 2;
+  min-width: 150px;
+}
+
+.todo-add .todo-select {
+  flex: 1;
+  min-width: 120px;
+}
+
+.add-btn {
+  background: #28a745;
+  color: white;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+/* Todo Filters */
+.todo-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #dee2e6;
+  background: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.filter-btn:hover {
+  border-color: #ffb347;
+  background: #fff8f0;
+}
+
+.filter-btn.active {
+  background: #ffb347;
+  border-color: #ffb347;
+  color: white;
+}
+
+/* Todo List */
+.todo-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  backdrop-filter: blur(2px);
-  transition: all 0.3s ease;
+  gap: 1rem;
+  transition: all 0.2s;
+  animation: slideIn 0.2s ease;
+  border: 1px solid #e9ecef;
 }
 
-.cube-face:hover {
-  background: linear-gradient(135deg, #ff9c2a, #ff7020);
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 140, 66, 0.6);
+.todo-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.face-content {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: #28a745;
 }
 
-/* Position each face */
-.front {
-  transform: translateZ(50px);
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.back {
-  transform: rotateY(180deg) translateZ(50px);
+.todo-text {
+  font-size: 1rem;
+  color: #2c2e3a;
+  word-break: break-word;
 }
 
-.right {
-  transform: rotateY(90deg) translateZ(50px);
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #adb5bd;
 }
 
-.left {
-  transform: rotateY(-90deg) translateZ(50px);
+.todo-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.top {
-  transform: rotateX(90deg) translateZ(50px);
+.priority-badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 40px;
+  font-weight: 600;
 }
 
-.bottom {
-  transform: rotateX(-90deg) translateZ(50px);
+.priority-low {
+  background: #d4edda;
+  color: #155724;
 }
 
-/* Responsive 3D cube */
+.priority-medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.priority-high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.todo-date {
+  font-size: 0.7rem;
+  color: #6c757d;
+}
+
+.delete-todo {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  color: #dc3545;
+}
+
+.delete-todo:hover {
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6c757d;
+  background: white;
+  border-radius: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive */
 @media (max-width: 680px) {
-  .cube-3d {
-    width: 70px;
-    height: 70px;
+  .todo-add {
+    flex-direction: column;
   }
-  .cube-face {
-    width: 70px;
-    height: 70px;
-    font-size: 2rem;
+  
+  .todo-add .todo-input,
+  .todo-add .todo-select,
+  .add-btn {
+    width: 100%;
   }
-  .front {
-    transform: translateZ(35px);
+  
+  .todo-stats {
+    flex-direction: column;
   }
-  .back {
-    transform: rotateY(180deg) translateZ(35px);
-  }
-  .right {
-    transform: rotateY(90deg) translateZ(35px);
-  }
-  .left {
-    transform: rotateY(-90deg) translateZ(35px);
-  }
-  .top {
-    transform: rotateX(90deg) translateZ(35px);
-  }
-  .bottom {
-    transform: rotateX(-90deg) translateZ(35px);
-  }
-}
-
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .cube-3d {
-    animation: none;
-    transform: rotateX(15deg) rotateY(15deg);
-  }
-  .cube-3d:hover {
-    animation: none;
-    transform: rotateX(25deg) rotateY(25deg) scale(1.05);
-    transition: transform 0.3s ease;
+  
+  .todo-item {
+    flex-wrap: wrap;
   }
 }
