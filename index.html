@@ -3,12 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Evgenii G. | Senior C# Engineer & Creator</title>
+  <meta name="description" content="Evgenii G. - Senior C# Engineer & Backend Architect specializing in .NET, microservices, and high-load systems. 4+ years experience at PSJ Sovcombank.">
+  <meta name="keywords" content="C#, .NET, Backend Engineer, Microservices, RabbitMQ, Docker, Kubernetes">
+  <meta name="author" content="Evgenii G.">
+  <meta name="theme-color" content="#2c2e3a">
+  <title>Evgenii G. | Senior C# Engineer & Backend Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="card">
     <div class="hero">
+      <!-- 3D Rotating Image Container -->
+      <div class="image-3d-container">
+        <div class="cube-3d" id="rotatingCube">
+          <div class="cube-face front">
+            <div class="face-content">👨‍💻</div>
+          </div>
+          <div class="cube-face back">
+            <div class="face-content">⚡</div>
+          </div>
+          <div class="cube-face right">
+            <div class="face-content">🚀</div>
+          </div>
+          <div class="cube-face left">
+            <div class="face-content">💻</div>
+          </div>
+          <div class="cube-face top">
+            <div class="face-content">✨</div>
+          </div>
+          <div class="cube-face bottom">
+            <div class="face-content">🎯</div>
+          </div>
+        </div>
+      </div>
       <h1>Evgenii G.</h1>
       <div class="hero-tagline">✦ senior C# engineer · backend architect ✦</div>
     </div>
@@ -18,7 +48,7 @@
       </div>
 
       <!-- Experience block (PSJ Sovcombank) -->
-      <div class="experience-section" id="expBlock">
+      <div class="experience-section" id="expBlock" tabindex="0" role="button" aria-label="Click to learn more about experience">
         <div class="exp-header">
           <div class="exp-title">
             <span>Software Engineer</span>
@@ -45,35 +75,37 @@
 
       <!-- Interactive stats (coffee & commits) -->
       <div class="fun-stats">
-        <div class="stat-card" id="coffeeStat">
+        <div class="stat-card" id="coffeeStat" tabindex="0" role="button" aria-label="Coffee counter, click to track your dev coffee intake">
           <div class="stat-number" id="coffeeCount">0</div>
           <div>☕ Dev coffees (click me)</div>
         </div>
-        <div class="stat-card" id="commitStat">
+        <div class="stat-card" id="commitStat" tabindex="0" role="button" aria-label="Commit counter, click to simulate new commits">
           <div class="stat-number" id="commitNumber">1.8k</div>
           <div>💻 commits & counting</div>
         </div>
       </div>
 
-      <!-- Contact: LinkedIn (corrected URL) + email -->
+      <!-- Contact: LinkedIn + email -->
       <div class="contact-section">
         <h3>📬 Let's connect — real human, real code</h3>
         <div class="contact-links">
-          <a href="https://www.linkedin.com/in/evgenii-gavrilenko-3b538a272/" class="contact-card" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/evgenii-gavrilenko-3b538a272/" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit Evgenii's LinkedIn profile">
             🔗 LinkedIn / Evgenii Gavrilenko
           </a>
-          <a href="mailto:gawrila33395@gmail.com" class="contact-card">
+          <a href="mailto:gawrila33395@gmail.com" class="contact-card" aria-label="Send an email to Evgenii">
             📧 gawrila33395@gmail.com
           </a>
         </div>
         <p style="margin-top: 1rem; font-size: 0.8rem; color: #b38f60;">💡 Open for collaborations, backend engineering roles, and tech talks.</p>
       </div>
 
-      <!-- happy ice-cream GIF -->
+      <!-- happy ice-cream GIF with fallback -->
       <div class="gif-section">
         <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" 
-             alt="happy dancing ice cream gif"
-             id="iceCreamGif" loading="lazy">
+             alt="Happy dancing ice cream character"
+             id="iceCreamGif" 
+             loading="lazy"
+             onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'200\\' height=\\'200\\' viewBox=\\'0 0 200 200\\'%3E%3Crect width=\\'200\\' height=\\'200\\' fill=\\'%23ffb347\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' dy=\\'.3em\\' fill=\\'white\\' font-size=\\'20\\'%3E🍦 Ice Cream!%3C/text%3E%3C/svg%3E'">
         <div class="caption">🍧 click the ice cream → instant joy! 🍧</div>
       </div>
 
