@@ -47,6 +47,71 @@
         <p>👋 Welcome to my interactive hub! I'm Evgenii — a passionate Software Engineer specializing in C#, .NET, and high‑load systems. I love crafting clean microservices and building meaningful digital experiences. Click around, and don't hesitate to chat with my AI assistant! 🚀</p>
       </div>
 
+      <!-- C# Todo List Section with Authentication -->
+      <div class="todo-section" id="todoSection">
+        <div class="todo-header">
+          <h2>📝 C# Todo List Manager</h2>
+          <div class="todo-badge">.NET 8 • MVC Pattern</div>
+        </div>
+        
+        <!-- Login Form -->
+        <div id="loginForm" class="todo-login">
+          <h3>🔐 Admin Authentication</h3>
+          <p class="login-hint">Enter admin credentials to access the todo system</p>
+          <div class="input-group">
+            <input type="text" id="loginUsername" placeholder="Username" class="todo-input">
+          </div>
+          <div class="input-group">
+            <input type="password" id="loginPassword" placeholder="Password" class="todo-input">
+          </div>
+          <button id="loginBtn" class="todo-btn login-btn">🔓 Login</button>
+          <div id="loginError" class="login-error hidden"></div>
+        </div>
+        
+        <!-- Todo App (hidden until login) -->
+        <div id="todoApp" class="todo-app hidden">
+          <div class="todo-user-info">
+            <span>👤 Logged in as: <strong>admin</strong></span>
+            <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+          </div>
+          
+          <div class="todo-stats">
+            <div class="stat-item">
+              <span class="stat-label">Total Tasks:</span>
+              <span id="totalTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Completed:</span>
+              <span id="completedTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Pending:</span>
+              <span id="pendingTasks" class="stat-value">0</span>
+            </div>
+          </div>
+          
+          <div class="todo-add">
+            <input type="text" id="newTodoInput" placeholder="Add a new task..." class="todo-input">
+            <select id="todoPriority" class="todo-select">
+              <option value="low">🟢 Low Priority</option>
+              <option value="medium" selected>🟡 Medium Priority</option>
+              <option value="high">🔴 High Priority</option>
+            </select>
+            <button id="addTodoBtn" class="todo-btn add-btn">+ Add Task</button>
+          </div>
+          
+          <div class="todo-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+          
+          <div id="todoList" class="todo-list">
+            <!-- Tasks will appear here -->
+          </div>
+        </div>
+      </div>
+
       <!-- Experience block (PSJ Sovcombank) -->
       <div class="experience-section" id="expBlock" tabindex="0" role="button" aria-label="Click to learn more about experience">
         <div class="exp-header">
